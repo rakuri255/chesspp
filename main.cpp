@@ -1,3 +1,9 @@
+/*
+ * Code Training
+ * Chess game with cpp
+ *
+ */
+
 #include "mainwindow.h"
 #include <QApplication>
 
