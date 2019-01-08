@@ -16,7 +16,7 @@ enum enumFigures
 {
     king,
     queen,
-    rook,
+    crook,
     bishop,
     knight,
     pawn

@@ -8,80 +8,28 @@
 #define FIGURES_H
 
 #include "enums.h"
+#include <cstddef>
+#include <QDebug>
 
 /* Here are the figures defined */
-/* Design Pattern Strategy is used for the different figure type */
+/* Design Factory Strategy is used for the different figure type */
 
 class Figures
 {
 public:
-    Figures(enumFigures type, enumColor color, bool alive);
-    //void setMovement(const enumFigures& type);
-    //virtual bool firstMoveOther = 0;
-    //virtual int x_Movement = 0;     // can't move in X
-    //virtual int y_Movement = 0;     // can't move in Y
-    //virtual int fightMovement = 0;  //spezific fight direction
+    virtual void move(const int&, const int&) = 0; //move to field
+    void set_Movement(const bool&, const int&, const bool&, const int&, const bool&, const int&);     // can't move in X
+    //virtual void setY_Movement(int) = 0;     // can't move in Y
 
     enumFigures type;
     enumColor color;
     bool alive;
+    bool x_Movement; //can walk in x
+    int x_steps;    //how many steps in x
+    bool y_Movement; //can wall in y
+    int y_steps;    //how many steps in y
+    bool xy_Movement;    //can walk in xy
+    int xy_steps;   //how many steps in xy
 };
-
-class Pawn_class : public Figures
-{
-    Pawn_class(enumFigures type, enumColor color, bool alive = true): Figures(type, color, alive){}
-private:
-    //the new things
-    bool firstMoveOther = true;
-    int Y_Movement = 1; // can move 1 field in Y
-    int fightMovement = 1; // can fight in X+1 and Y+1
-};
-
-class Knight_class : public Figures
-{
-public:
-    Knight_class(enumFigures type, enumColor color, bool alive = true): Figures(type, color, alive){}
-private:
-    //the new things
-
-};
-
-class King_class : public Figures
-{
-public:
-    King_class(enumFigures type, enumColor color, bool alive = true): Figures(type, color, alive){}
-private:
-    //the new things
-};
-
-class Queen_class : public Figures
-{
-public:
-    Queen_class(enumFigures type, enumColor color, bool alive = true): Figures(type, color, alive){}
-private:
-    //the new things
-
-};
-
-class Crook_class : public Figures
-{
-public:
-    Crook_class(enumFigures type, enumColor color, bool alive = true): Figures(type, color, alive){}
-private:
-    //the new things
-
-};
-
-class Bishop_class : public Figures
-{
-public:
-    Bishop_class(enumFigures type, enumColor color, bool alive = true): Figures(type, color, alive){}
-private:
-    //the new things
-
-};
-
-
-
 
 #endif // FIGURES_H

@@ -8,6 +8,7 @@
 
 #include <QMainWindow>
 #include "figures.h"
+#include "figuresfactory.h"
 #include "enums.h"
 
 
@@ -28,15 +29,13 @@ private:
 
     //init functions
     void initFigures(); //init the figures and default behaviors
-    void push_back_amount(const enum_player& player, const Figures& figure, const int& amount); //push figures to list
+    void push_back_amount(const enum_player& player, Figures *figure, const int& amount); //push figures to list
 
     //lists
-    std::list<Figures> list_player_one; // set of figures for player one
-    std::list<Figures> list_player_two; // set of figures for player two
-
-    //!<brief> check for usage
-    Figures *figures_;
-    void setFigureType(const enumFigures& type);
+    std::list<Figures*> list_player_one; // set of figures for player one
+    std::list<Figures*> list_player_two; // set of figures for player two
+    std::vector<Figures*> vector_beaten_figures_player_one;
+    std::vector<Figures*> vector_beaten_figures_player_two;
 };
 
 #endif // MAINWINDOW_H
