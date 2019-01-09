@@ -7,12 +7,13 @@
 #ifndef PLAYFIELD_H
 #define PLAYFIELD_H
 
+const int playFieldSize = 8;
 
 class playfield
 {
 public:
     playfield();
-    int field = 8; //Field is 8x8
+    char board[playFieldSize][playFieldSize]; //Field is 8x8
 
 };
 
