@@ -18,23 +18,23 @@ void Figure_Knight::move(const int& x, const int& y)
   else if(farLeft)
     {
       if(y == 1) //far left upper
-        qDebug() << "i move " << "far right upper";
+        qDebug() << "i move " << "far left upper";
       else if(y == -1) //far left under
-        qDebug() << "i move " << "far right under";
+        qDebug() << "i move " << "far left under";
     }
   else if(farUpper)
     {
       if(x == 1) //far upper right
         qDebug() << "i move " << "far upper right";
       else if(x == -1) //far upper left
-        qDebug() << "i move " << "far upper right";
+        qDebug() << "i move " << "far upper left";
     }
   else if(farDowner)
     {
       if(x == 1) //far under right
-        qDebug() << "i move " << "far upper right";
+        qDebug() << "i move " << "far under right";
       else if(x == -1) //far under left
-        qDebug() << "i move " << "far upper right";
+        qDebug() << "i move " << "far under left";
     }
   else
     qDebug() << "ilegal movement";

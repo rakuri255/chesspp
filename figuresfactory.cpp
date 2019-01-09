@@ -12,7 +12,7 @@ Figures* FiguresFactory::create(enumFigures type)
         break;
     case queen:
         figures = new Figure_Queen;
-        figures->set_Movement(false,0,false,0,true,99);
+        figures->set_Movement(true,99,true,99,true,99);
 
         break;
     case crook:
@@ -24,6 +24,7 @@ Figures* FiguresFactory::create(enumFigures type)
         figures = new Figure_Bishop;
         figures->set_Movement(false,0,false,0,true,99);
         break;
+
     case knight:
         figures = new Figure_Knight;
         figures->set_Movement(true,3,true,3,false,0);
@@ -32,6 +33,7 @@ Figures* FiguresFactory::create(enumFigures type)
     case pawn:
         figures = new Figure_Pawn;
         figures->set_Movement(false,0,true,1,false,0);
+        figures->set_FigurePic(QPixmap("qrc:/figures/figures/pawn_white.png"));
         break;
 
     default:
